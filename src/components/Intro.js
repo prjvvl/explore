@@ -7,9 +7,9 @@ import React, { useEffect, useRef, useState } from "react";
 const intToPx = (num) =>  `${num}px`;
 
 const updateFrame = (balls) => {
-    balls[0].left = balls[0].left+10;
-    balls[1].left = balls[1].left+10;
-    balls[2].left = balls[2].left+10;
+    balls[0].left = balls[0].left+1;
+    balls[1].left = balls[1].left+1;
+    balls[2].left = balls[2].left+1;
     return balls;
 }
 
@@ -18,16 +18,16 @@ export default function Intro()  {
     const [time, setTime] = useState(0);
 
     const [balls, setBalls] = useState([
-        {name:'ball_1', color:'red', left:250, top:220},
-        {name:'ball_2', color:'blue', left:400, top:170},
-        {name:'ball_3', color:'green', left:550, top:120}
+        {name:'ball_1', color:'red', left:0, top:50},
+        {name:'ball_2', color:'blue', left:50, top:0},
+        {name:'ball_3', color:'green', left:100, top:-50}
     ]);
 
     useEffect(() => {
         const interval = setInterval(() => {
             setBalls(updateFrame(balls))
             setTime(time+1)
-        }, 2000);
+        }, 200);
         return () => clearInterval(interval);
     }, [time])
 
@@ -41,10 +41,10 @@ export default function Intro()  {
 
     return (
         <Container sx={{position:'relative'}}>
-            <Box position='absolute' width='100%' minHeight='500px' ref={boxRef}>
+            <Box position='absolute' width='100%' ref={boxRef} minHeight='300px'>
                 {balls.map((ball, idx) => {return <div className="ball" key={ball.name} style={{background:ball.color, left:intToPx(ball.left), top:intToPx(ball.top)}}/>;})}
             </Box>
-            <Box position='absolute' width='100%' className='test' display='flex' justifyContent='center' alignItems='center' minHeight='500px'>
+            <Box position='absolute' width='100%' display='flex' justifyContent='left' alignItems='center' minHeight='150px'>
                 <Typography variant="h3" sx={{color:'orange', fontWeight:'bold', mixBlendMode:'difference'}}>PRAJWAL JADHAV</Typography>
             </Box>
         </Container>
