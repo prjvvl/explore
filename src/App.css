@@ -1,13 +1,40 @@
 .test {
-  border: 1px dotted gray;
+  border: 1px solid gray;
+}
+
+.canvas {
+  box-shadow: inset 0px 0px 50px 50px #fff;
 }
 
 
 .ball{
+  background: orange;
   position: inherit;
   height: 50px;
   width: 50px;
-  /* border: 1px solid black; */
   border-radius: 50%;
-  mix-blend-mode: difference;
+  /* mix-blend-mode: difference; */
+
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -ms-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+
+  -webkit-animation:spin 10s linear infinite;
+  -moz-animation:spin 10s linear infinite;
+  animation:spin 10s linear infinite;  
+}
+
+@-moz-keyframes spin { 
+  100% { -moz-transform: rotate(360deg); } 
+}
+
+@-webkit-keyframes spin { 
+  100% { -webkit-transform: rotate(360deg); } 
+}
+
+@keyframes spin { 
+  100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); 
+  } 
 }
