@@ -4,10 +4,10 @@
 
 
 .ball{
-  position: relative;
+  position: inherit;
   height: 50px;
   width: 50px;
   /* border: 1px solid black; */
   border-radius: 50%;
-  /* mix-blend-mode: difference; */
+  mix-blend-mode: difference;
 }
