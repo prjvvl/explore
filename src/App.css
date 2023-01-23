@@ -1,14 +1,17 @@
 .test {
   border: 1px solid gray;
+
 }
 
 .canvas {
-  box-shadow: inset 0px 0px 50px 50px #fff;
+  box-shadow: inset 0px 0px 20px 20px #fff;
+  left: 50%;
+  transform: translate(-50%, -0);
 }
 
 .line {
   position: absolute;
-  background-image: linear-gradient(to right, rgba(0,0,0,0), orange, rgba(0,0,0,0));
+  background-image: linear-gradient(to right, rgba(0,0,0,0), gray, rgba(0,0,0,0));
   height: 2px;
 
   /* -webkit-transition: all 1s ease-out;
@@ -27,14 +30,14 @@
 }
 
 .ball{
-  background: orange;
+  /* background: orange; */
   position: inherit;
   padding: 0;
   margin: 0;
   height: 50px;
   width: 50px;
   border-radius: 50%;
-  /* mix-blend-mode: difference; */
+  /* mix-blend-mode: screen; */
 
   /* -webkit-transition: all 1s ease-out;
   -moz-transition: all 1s ease-out;

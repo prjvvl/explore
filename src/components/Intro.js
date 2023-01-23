@@ -12,7 +12,7 @@ const random  = (min, max) => Math.round(Math.random()*(max-min)) + min;
 // Ball functions
 const dist = (x1, y1, x2, y2) => Math.sqrt(Math.pow(x1-x2, 2) + Math.pow(y1-y2, 2))
 
-const solve = (x, y, r, angle, d=3) => {
+const solve = (x, y, r, angle, d=2) => {
     let X1=0, Y1=0, XX=0, YY=0;
     let tan = Math.tan(angle*1.01*Math.PI/180);
     
@@ -33,18 +33,25 @@ const bounce = (balls, width, height) => {
         
         ball.angle = ball.angle%360;
 
-        if (ball.x > width+60) {
+        if (ball.x > width+50) {
             if (ball.angle==0) ball.angle = 180;
             else if (ball.angle < 90) ball.angle = ball.angle+90;
             else if (ball.angle > 270) ball.angle = ball.angle-90;
             else console.log('invalid Position');
-        }else if (ball.x < 0-60) {
+        }else if (ball.x < -50) {
             if (ball.angle==180) ball.angle = 0;
             else if (ball.angle < 180) ball.angle = ball.angle-90;
             else if (ball.angle > 180) ball.angle = ball.angle+90;
-        }else if (ball.y < 0-60 || ball.y > height+60) ball.angle = 360-ball.angle;
+        }else if (ball.y < -50 || ball.y > height+50) ball.angle = 360-ball.angle;
 
         let [newX, newY] = solve(ball.x, ball.y, 25, ball.angle);
+
+        if (newX < -60 || newX > width+60 || newY < -60 || newY > height+60) {
+            newX = 0;
+            newY = 0;
+            ball.angle = random(30, 60);
+        }
+
         balls[i].x = newX;
         balls[i].y = newY;
         balls[i].angle = ball.angle;    
@@ -107,8 +114,9 @@ export default function Intro()  {
 
 
     return (
-        <Container sx={{position:'relative'}}>
-            <Box className='canvas' margin='5px' position='absolute' width='100%' ref={boxRef} minHeight='400px' sx={{overflow:'hidden'}}>
+        <div className="test" style={{height:'310px'}}>
+        <div sx={{position:'relative'}}>
+            <Box className='canvas' position='absolute' width='90%' marginTop='5px' ref={boxRef} height='300px' sx={{overflow:'hidden'}}>
                 {balls.map((ball, idx) => 
                     <div className="ball" key={ball.id} style={{left:intToPx(ball.x-25), top:intToPx(ball.y-25)}}>
                         <img src={ball.url} alt="dragon-ball" height='100%' width='auto'/>
@@ -118,9 +126,13 @@ export default function Intro()  {
                     <div className="line" key={idx} style={{left:intToPx(line.x), top:intToPx(line.y), width:intToPx(line.length), transform:`rotate(${line.angle}deg)`}}/>                                
                 )}
             </Box>
-            <Box className='canvas' margin='5px' position='absolute' width='100%' display='flex' justifyContent='center' alignItems='center' minHeight='400px'>
-                <Typography variant="h2" sx={{color:'orange', fontWeight:'bold', mixBlendMode:'difference'}}>PRAJWAL JADHAV</Typography>
+            <Box className='canvas' position='absolute' width='90%' marginTop='5px' display='flex' justifyContent='center' alignItems='center' textAlign='center' height='300px'>
+                <div>
+                    <Typography variant="h2" sx={{color:'black', fontWeight:'bold', mixBlendMode:'difference', fontFamily:"'Quicksand', cursive", fontWeight:'300'}}>PRAJWAL JADHAV</Typography>
+                    <Typography variant="overline" sx={{color:'gray', fontWeight:'bold', mixBlendMode:'difference', fontFamily:"'Shadows Into Light', cursive", fontSize:'20px' }}>i Code</Typography>
+                </div>
             </Box>
-        </Container>
+        </div>
+        </div>
     )
 }
