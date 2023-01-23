@@ -85,8 +85,8 @@ export default function Intro()  {
         {id:3, url:db_3, x:0, y:0, angle:0},
         {id:4, url:db_4, x:0, y:0, angle:0},
         {id:5, url:db_5, x:0, y:0, angle:0},
-        {id:6, url:db_6, x:0, y:0, angle:0},
-        {id:7, url:db_7, x:0, y:0, angle:0},
+        // {id:6, url:db_6, x:0, y:0, angle:0},
+        // {id:7, url:db_7, x:0, y:0, angle:0},
     ]);
 
     const [lines, setLines] = useState([]);
