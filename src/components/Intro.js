@@ -114,7 +114,7 @@ export default function Intro()  {
 
 
     return (
-        <div className="test" style={{height:'310px'}}>
+        <div style={{height:'310px'}}>
         <div sx={{position:'relative'}}>
             <Box className='canvas' position='absolute' width='90%' marginTop='5px' ref={boxRef} height='300px' sx={{overflow:'hidden'}}>
                 {balls.map((ball, idx) => 
