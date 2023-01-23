@@ -9,9 +9,10 @@ const intToPx = (num) =>  `${num}px`;
 
 const random  = (min, max) => Math.round(Math.random()*(max-min)) + min;
 
+// Ball functions
 const dist = (x1, y1, x2, y2) => Math.sqrt(Math.pow(x1-x2, 2) + Math.pow(y1-y2, 2))
 
-const solve = (x, y, r, angle, d=64) => {
+const solve = (x, y, r, angle, d=3) => {
     let X1=0, Y1=0, XX=0, YY=0;
     let tan = Math.tan(angle*1.01*Math.PI/180);
     
@@ -51,17 +52,37 @@ const bounce = (balls, width, height) => {
     return balls;
 }
 
+// Line Functions
+const updateLines = (balls, thickness=2) => {
+    var lines = [];
+    for (let i = 0; i < balls.length; i++) {
+        for (let j=i+1; j<balls.length; j++) {
+            let x1=balls[i].x, y1=balls[i].y;
+            let x2=balls[j].x, y2=balls[j].y;
+            var len = Math.sqrt(((x2-x1) * (x2-x1)) + ((y2-y1) * (y2-y1)));
+            var cx = ((x1+x2)/2) - (len/2)
+            var cy = ((y1+y2)/2) - (thickness/2);
+            var angle = Math.atan2((y1-y2),(x1-x2))*(180/Math.PI);
+            lines.push({x:cx, y:cy, length:len, angle:angle})
+        }
+    }
+    return lines;
+}
+
+
 export default function Intro()  {
 
     const [balls, setBalls] = useState([
-        {id:1, url:db_1, x:0, y:0, angle:0},
-        {id:2, url:db_2, x:0, y:0, angle:0},
+        {id:1, url:db_1, x:100, y:100, angle:0},
+        {id:2, url:db_2, x:200, y:200, angle:0},
         {id:3, url:db_3, x:0, y:0, angle:0},
         {id:4, url:db_4, x:0, y:0, angle:0},
         {id:5, url:db_5, x:0, y:0, angle:0},
         {id:6, url:db_6, x:0, y:0, angle:0},
         {id:7, url:db_7, x:0, y:0, angle:0},
     ]);
+
+    const [lines, setLines] = useState([]);
 
     const [time, setTime] = useState(0);
     const boxRef = useRef(null);
@@ -78,8 +99,9 @@ export default function Intro()  {
                 });
             }
             setBalls(bounce(balls, boxWidth, boxHeight))
+            setLines(updateLines(balls))
             setTime(time+1)
-        }, 250);
+        }, 10);
         return () => clearInterval(interval);
     }, [time, boxRef.current])
 
@@ -91,6 +113,9 @@ export default function Intro()  {
                     <div className="ball" key={ball.id} style={{left:intToPx(ball.x-25), top:intToPx(ball.y-25)}}>
                         <img src={ball.url} alt="dragon-ball" height='100%' width='auto'/>
                     </div>
+                )}
+                {lines.map((line, idx) => 
+                    <div className="line" key={idx} style={{left:intToPx(line.x), top:intToPx(line.y), width:intToPx(line.length), transform:`rotate(${line.angle}deg)`}}/>                                
                 )}
             </Box>
             <Box className='canvas' margin='5px' position='absolute' width='100%' display='flex' justifyContent='center' alignItems='center' minHeight='400px'>

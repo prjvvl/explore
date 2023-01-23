@@ -6,20 +6,41 @@
   box-shadow: inset 0px 0px 50px 50px #fff;
 }
 
+.line {
+  position: absolute;
+  background-image: linear-gradient(to right, rgba(0,0,0,0), orange, rgba(0,0,0,0));
+  height: 2px;
+
+  /* -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -ms-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out; */
+
+  /* opacity: 0;
+  animation: disappear 2s linear 2s infinite alternate; */
+}
+
+@keyframes disappear {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
 
 .ball{
   background: orange;
   position: inherit;
+  padding: 0;
+  margin: 0;
   height: 50px;
   width: 50px;
   border-radius: 50%;
   /* mix-blend-mode: difference; */
 
-  -webkit-transition: all 1s ease-out;
+  /* -webkit-transition: all 1s ease-out;
   -moz-transition: all 1s ease-out;
   -ms-transition: all 1s ease-out;
   -o-transition: all 1s ease-out;
-  transition: all 1s ease-out;
+  transition: all 1s ease-out; */
 
   -webkit-animation:spin 10s linear infinite;
   -moz-animation:spin 10s linear infinite;
