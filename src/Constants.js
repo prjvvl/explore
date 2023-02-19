@@ -1,4 +1,8 @@
 
+import code from './imgs/code.jpg'
+
+export const img1 = './imgs/code.jpg';
+
 export const db_1 = 'https://static.thenounproject.com/png/1973941-200.png'
 export const db_2 = 'https://static.thenounproject.com/png/1973936-200.png'
 export const db_3 = 'https://static.thenounproject.com/png/1973940-200.png'

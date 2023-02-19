@@ -2,7 +2,13 @@ import { Padding, SystemSecurityUpdate } from "@mui/icons-material";
 import { Button, Container, Typography } from "@mui/material";
 import { Box, height } from "@mui/system";
 import React, { useEffect, useRef, useState } from "react";
-import { db_1, db_2, db_3, db_4, db_5, db_6, db_7 } from "../Constants";
+// import { db_1, db_2, db_3, db_4, db_5, db_6, db_7 } from "../Constants";
+
+import db_1 from '../imgs/dbs/db1.png';
+import db_2 from '../imgs/dbs/db2.png';
+import db_3 from '../imgs/dbs/db3.png';
+import db_4 from '../imgs/dbs/db4.png';
+import db_5 from '../imgs/dbs/db5.png';
 
 
 const intToPx = (num) =>  `${num}px`;

@@ -4,7 +4,7 @@
 }
 
 .canvas {
-  box-shadow: inset 0px 0px 20px 20px #fff;
+  /* box-shadow: inset 0px 0px 20px 20px #fff; */
   left: 50%;
   transform: translate(-50%, -0);
 }
@@ -30,7 +30,6 @@
 }
 
 .ball{
-  /* background: orange; */
   position: inherit;
   padding: 0;
   margin: 0;
