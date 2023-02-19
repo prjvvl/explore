@@ -1,6 +1,5 @@
-import { Padding, SystemSecurityUpdate } from "@mui/icons-material";
-import { Button, Container, Typography } from "@mui/material";
-import { Box, height } from "@mui/system";
+import { Typography } from "@mui/material";
+import { Box } from "@mui/system";
 import React, { useEffect, useRef, useState } from "react";
 // import { db_1, db_2, db_3, db_4, db_5, db_6, db_7 } from "../Constants";
 

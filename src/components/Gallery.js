@@ -1,5 +1,5 @@
-import { Card, CardActionArea, CardContent, CardMedia, Container, Divider, Grid, Paper, Typography } from "@mui/material";
-import { Box, width } from "@mui/system";
+import { Card, CardActionArea, CardContent, CardMedia, Container, Divider, Grid, Typography } from "@mui/material";
+import { Box} from "@mui/system";
 import React from "react";
 
 import img_coding from '../imgs/coding.jpg'
