@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/explore/static/css/main.82512d4e.css",
-    "main.js": "/explore/static/js/main.248b952e.js",
-    "static/media/atom.jpg": "/explore/static/media/atom.cfb469052e56ae437b34.jpg",
+    "main.js": "/explore/static/js/main.fd6ca9c6.js",
     "static/media/trends.jpg": "/explore/static/media/trends.523fa14de814028a510c.jpg",
     "static/media/news.jpg": "/explore/static/media/news.0182ec1c7e6c2ccc49bd.jpg",
     "static/media/algo.jpg": "/explore/static/media/algo.8d928155d31b2442e8ca.jpg",
+    "static/media/code.jpg": "/explore/static/media/code.ca8c4fc784498a5e514c.jpg",
     "static/media/games.jpg": "/explore/static/media/games.260a92449bd87717be18.jpg",
-    "static/media/coding.jpg": "/explore/static/media/coding.389a3787e9270675ba70.jpg",
+    "static/media/ytb.jpg": "/explore/static/media/ytb.82c2330c50077351b6a2.jpg",
     "index.html": "/explore/index.html",
     "main.82512d4e.css.map": "/explore/static/css/main.82512d4e.css.map",
-    "main.248b952e.js.map": "/explore/static/js/main.248b952e.js.map"
+    "main.fd6ca9c6.js.map": "/explore/static/js/main.fd6ca9c6.js.map"
   },
   "entrypoints": [
     "static/css/main.82512d4e.css",
-    "static/js/main.248b952e.js"
+    "static/js/main.fd6ca9c6.js"
   ]
 }
