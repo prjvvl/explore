@@ -2,8 +2,8 @@ import { Card, CardActionArea, CardContent, CardMedia, Container, Divider, Grid,
 import { Box} from "@mui/system";
 import React from "react";
 
-import img_coding from '../imgs/coding.jpg'
-import img_physics from '../imgs/atom.jpg'
+import img_coding from '../imgs/code.jpg'
+import img_youtube from '../imgs/ytb.jpg'
 import img_games from '../imgs/games.jpg'
 import img_analysis from '../imgs/trends.jpg'
 import img_algo from '../imgs/algo.jpg'
@@ -30,38 +30,27 @@ function MyCard(title, link, img, description) {
 }
 export default function Gallery() {
     return (<Container>
+        <br/>
         <Divider textAlign="left" sx={{borderBottomWidth: 4}}><Typography component="div" variant="h5">Projects</Typography></Divider>
         <Grid container >
             <Grid item md='6' sm='12' sx={{padding:2}}>{MyCard(
                     'Leetcore', 
                     'https://prjvvl-leetcore.netlify.app/', 
                     img_coding, 
-                    'Leeetcore helps you to solve DSA more effectivly')}</Grid>
+                    'Leeetcore helps you to solve DSA more effectivly')}</Grid>                                                                                            
+        </Grid>
+        <br/><Divider textAlign="left" sx={{borderBottomWidth: 4}}><Typography component="div" variant="h5">Work In Progress</Typography></Divider>
+        <Grid container >
+        <Grid item md='6' sm='12' sx={{padding:2}}>{MyCard(
+                    'MyTube', 
+                    'https://prjvvl-leetcore.netlify.app/', 
+                    img_youtube, 
+                    'WIP')}</Grid>     
             <Grid item md='6' sm='12' sx={{padding:2}}>{MyCard(
-                    'Algorithms', 
+                    'Algorithm Visualizer', 
                     'https://prjvvl-leetcore.netlify.app/', 
                     img_algo, 
-                    'WIP')}</Grid>  
-            <Grid item md='6' sm='12' sx={{padding:2}}>{MyCard(
-                    'Physiq', 
-                    'https://prjvvl-leetcore.netlify.app/', 
-                    img_physics, 
-                    'WIP')}</Grid>
-            <Grid item md='6' sm='12' sx={{padding:2}}>{MyCard(
-                    'E-Extract', 
-                    'https://prjvvl-leetcore.netlify.app/', 
-                    img_news, 
-                    'WIP')}</Grid>
-            <Grid item md='6' sm='12' sx={{padding:2}}>{MyCard(
-                    'Games', 
-                    'https://prjvvl-leetcore.netlify.app/', 
-                    img_games, 
-                    'WIP')}</Grid>
-            <Grid item md='6' sm='12' sx={{padding:2}}>{MyCard(
-                    'Data Analysis', 
-                    'https://prjvvl-leetcore.netlify.app/', 
-                    img_analysis, 
-                    'WIP')}</Grid>                                                                                             
+                    'WIP')}</Grid>                                                                                     
         </Grid>
     </Container>)
 }

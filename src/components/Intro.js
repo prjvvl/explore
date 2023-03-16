@@ -84,7 +84,7 @@ const updateLines = (balls, thickness=2) => {
 
 export default function Intro()  {
 
-    const [balls, setBalls] = useState([
+    const [balls, setBalls] = useState(() => [
         {id:1, url:db_1, x:100, y:100, angle:0},
         {id:2, url:db_2, x:200, y:200, angle:0},
         {id:3, url:db_3, x:0, y:0, angle:0},
@@ -113,7 +113,7 @@ export default function Intro()  {
             setBalls(bounce(balls, boxWidth, boxHeight))
             setLines(updateLines(balls))
             setTime(time+1)
-        }, 10);
+        }, 25);
         return () => clearInterval(interval);
     }, [time, boxRef.current])
 

@@ -3,12 +3,12 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import React from "react";
 import MenuIcon from '@mui/icons-material/Menu';
 
-export default function NavBar() {
+const openInNewTab = (url) => {
+    const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+    if (newWindow) newWindow.opener = null
+}
 
-    const openInNewTab = (url) => {
-        const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
-        if (newWindow) newWindow.opener = null
-    }
+export default function NavBar() {
 
     return (<Box sx={{flexGrow:1}}>
         <AppBar position="static" color="transparent">
