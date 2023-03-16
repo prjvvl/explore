@@ -17,7 +17,7 @@ function MyCard(title, link, img, description) {
     }
 
     return <CardActionArea onClick={() => openInNewTab(link)}>
-        <Card sx={{ display: 'flex' }} elevation='6' Paper>
+        <Card className="test" sx={{ display: 'flex' }} elevation='6' Paper>
             <CardMedia component="img" sx={{width: 180, height:180 }} image={img} alt="img"/>
             <Box>
                 <CardContent sx={{ flex: '1  0 auto' }}>
@@ -52,5 +52,6 @@ export default function Gallery() {
                     img_algo, 
                     'WIP')}</Grid>                                                                                     
         </Grid>
+        <br/>
     </Container>)
 }

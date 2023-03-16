@@ -113,7 +113,7 @@ export default function Intro()  {
             setBalls(bounce(balls, boxWidth, boxHeight))
             setLines(updateLines(balls))
             setTime(time+1)
-        }, 25);
+        }, 20);
         return () => clearInterval(interval);
     }, [time, boxRef.current])
 
