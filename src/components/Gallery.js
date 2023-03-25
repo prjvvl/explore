@@ -33,24 +33,12 @@ export default function Gallery() {
         <br/>
         <Divider textAlign="left" sx={{borderBottomWidth: 4}}><Typography component="div" variant="h5">Projects</Typography></Divider>
         <Grid container >
-            <Grid item md='6' sm='12' sx={{padding:2}}>{MyCard(
-                    'Leetcore', 
-                    'https://prjvvl-leetcore.netlify.app/', 
-                    img_coding, 
-                    'Leeetcore helps you to solve DSA more effectivly')}</Grid>                                                                                            
+            <Grid item md='6' sm='12' sx={{padding:2}}>{MyCard('Leetcore', 'https://prjvvl-leetcore.netlify.app/', img_coding, 'Leetcode Clone - Helps you to filter important questions with better progress traking ability')}</Grid> 
+            <Grid item md='6' sm='12' sx={{padding:2}}>{MyCard('MyTube', 'https://prjvvl-mytube.netlify.app/', img_youtube, 'Youteube Clone - Youtube but better. Search videos, No ads, No recomendations.')}</Grid>                                                                                           
         </Grid>
         <br/><Divider textAlign="left" sx={{borderBottomWidth: 4}}><Typography component="div" variant="h5">Work In Progress</Typography></Divider>
-        <Grid container >
-        <Grid item md='6' sm='12' sx={{padding:2}}>{MyCard(
-                    'MyTube', 
-                    'https://prjvvl-leetcore.netlify.app/', 
-                    img_youtube, 
-                    'WIP')}</Grid>     
-            <Grid item md='6' sm='12' sx={{padding:2}}>{MyCard(
-                    'Algorithm Visualizer', 
-                    'https://prjvvl-leetcore.netlify.app/', 
-                    img_algo, 
-                    'WIP')}</Grid>                                                                                     
+        <Grid container >     
+            <Grid item md='6' sm='12' sx={{padding:2}}>{MyCard('Algorithm Visualizer', 'https://prjvvl-leetcore.netlify.app/', img_algo, 'WIP')}</Grid>                                                                                     
         </Grid>
         <br/>
     </Container>)
