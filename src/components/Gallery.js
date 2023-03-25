@@ -16,9 +16,8 @@ function MyCard(title, link, img, description) {
         if (newWindow) newWindow.opener = null
     }
 
-    return <CardActionArea onClick={() => openInNewTab(link)}>
-        <Card className="test" sx={{ display: 'flex' }} elevation='6' Paper>
-            <CardMedia component="img" sx={{width: 180, height:180 }} image={img} alt="img"/>
+    return <Card className="test" sx={{ display: 'flex', cursor:'pointer', alignContent:'center', alignItems:'center'}} onClick={() => openInNewTab(link)} elevation='6' Paper>
+            <CardMedia component="img" sx={{width: 100, height:100 }} image={img} alt="img"/>
             <Box>
                 <CardContent sx={{ flex: '1  0 auto' }}>
                 <Typography component="div" variant="h5">{title}</Typography>
@@ -26,19 +25,19 @@ function MyCard(title, link, img, description) {
                 </CardContent>
             </Box>
         </Card>
-    </CardActionArea> 
 }
+
 export default function Gallery() {
     return (<Container>
         <br/>
         <Divider textAlign="left" sx={{borderBottomWidth: 4}}><Typography component="div" variant="h5">Projects</Typography></Divider>
         <Grid container >
-            <Grid item md='6' sm='12' sx={{padding:2}}>{MyCard('Leetcore', 'https://prjvvl-leetcore.netlify.app/', img_coding, 'Leetcode Clone - Helps you to filter important questions with better progress traking ability')}</Grid> 
-            <Grid item md='6' sm='12' sx={{padding:2}}>{MyCard('MyTube', 'https://prjvvl-mytube.netlify.app/', img_youtube, 'Youteube Clone - Youtube but better. Search videos, No ads, No recomendations.')}</Grid>                                                                                           
+            <Grid item md='6' sm='12' sx={{padding:1}}>{MyCard('Leetcore', 'https://prjvvl-leetcore.netlify.app/', img_coding, 'Leetcode Clone - Helps you to filter important questions with better progress traking ability')}</Grid> 
+            <Grid item md='6' sm='12' sx={{padding:1}}>{MyCard('MyTube', 'https://prjvvl-mytube.netlify.app/', img_youtube, 'Youteube Clone - Youtube but better. Search videos, No ads, No recomendations.')}</Grid>                                                                                           
         </Grid>
         <br/><Divider textAlign="left" sx={{borderBottomWidth: 4}}><Typography component="div" variant="h5">Work In Progress</Typography></Divider>
         <Grid container >     
-            <Grid item md='6' sm='12' sx={{padding:2}}>{MyCard('Algorithm Visualizer', 'https://prjvvl-leetcore.netlify.app/', img_algo, 'WIP')}</Grid>                                                                                     
+            <Grid item md='6' sm='12' sx={{padding:1}}>{MyCard('Algorithm Visualizer', 'https://prjvvl-leetcore.netlify.app/', img_algo, 'Explore diffrent alogrithms with visuals for better understanding')}</Grid>                                                                                     
         </Grid>
         <br/>
     </Container>)

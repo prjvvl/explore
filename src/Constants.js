@@ -9,3 +9,5 @@ export const db_6 = 'https://static.thenounproject.com/png/1973939-200.png'
 export const db_7 = 'https://static.thenounproject.com/png/1973935-200.png'
 
 
+// git push origin main
+// npm run deploy
